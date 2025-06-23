@@ -1,7 +1,7 @@
 
 # 🧠 Desafio: Aprendendo na Prática Programação Orientada a Objetos com Java
 
-Bem-vindo(a) ao repositório do projeto **"Aprenda na Prática Programação Orientada a Objetos"**, desenvolvido durante o Bootcamp **"TONNIE - Java and AI in Europe"**, promovido pela [Digital Innovation One (DIO)](https://web.digitalinnovation.one/) em parceria com o **Santander**.
+Bem-vindo(a) ao repositório do projeto **"Aprenda na Prática Programação Orientada a Objetos"**, desenvolvido durante o Bootcamp **"TONNIE - Java and AI in Europe"**, promovido pela [Digital Innovation One (DIO)](https://web.digitalinnovation.one/) em parceria com a **Tonnie**.
 
 📌 **Objetivo do Projeto:** Aplicar os principais pilares da Programação Orientada a Objetos (POO) — **abstração, encapsulamento, herança e polimorfismo** — por meio de um projeto prático em Java que simula uma plataforma de Bootcamp.
 
@@ -103,15 +103,7 @@ O projeto simula a jornada de um desenvolvedor em um bootcamp, permitindo inscri
 ---
 
 
----
-
-## 👩‍💻 Sobre o Bootcamp
-
-O **Santander Bootcamp 2024 - Backend com Java** é uma iniciativa gratuita da DIO e do Santander que visa capacitar desenvolvedores com foco em backend Java. Com conteúdos práticos, mentorias e desafios reais, o bootcamp prepara os participantes para o mercado de tecnologia.
-
----
-
-## ✍️ Autora
+## 👩‍💻 Aluna
 
 Feito por [Lais Godinho](https://github.com/laisbastosbg)
 

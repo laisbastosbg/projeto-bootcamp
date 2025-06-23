@@ -1,35 +1,30 @@
-import java.util.Date;
-
 public class Curso extends Conteudo{
-    private Date data;
 
-    private double cargaHoraria;
+    private int cargaHoraria;
 
-    public Curso(String titulo, String descricao, Date data, double cargaHoraria) {
-        this.setTitulo(titulo);
-        this.setDescricao(descricao);
-        this.data = data;
-        this.cargaHoraria = cargaHoraria;
+    public Curso() {
+ 
     }
 
     public double calcularXp() {
         return XP_BASE * cargaHoraria;
     }
 
-    public Date getData() {
-        return data;
-    }
-
-    public void setData(Date data) {
-        this.data = data;
-    }
-
-    public double getCargaHoraria() {
+    public int getCargaHoraria() {
         return cargaHoraria;
     }
 
-    public void setCargaHoraria(double cargaHoraria) {
+    public void setCargaHoraria(int cargaHoraria) {
         this.cargaHoraria = cargaHoraria;
     }
     
+    @Override
+    public String toString() {
+        return "Curso\n" +
+                "\ttitulo: " + getTitulo() + '\n' +
+                "\tdescricao: " + getDescricao() + '\n' +
+                "\tcargaHoraria: " + cargaHoraria + "\n" +
+                "\tXP: " + calcularXp() +
+                '\n';
+    }
 }

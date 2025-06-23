@@ -1,21 +1,15 @@
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.LinkedHashSet;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Bootcamp {
     private String nome;
     private String descricao;
-    private Date dataInicio;
-    private Date dataFinal;
-    private Conteudo[] conteudos;
-    private Dev[] devsInscritos;
-
-    public Bootcamp(String nome, String descricao, Date dataInicio, Date dataFinal) {
-        this.nome = nome;
-        this.descricao = descricao;
-        this.dataInicio = dataInicio;
-        this.dataFinal = dataFinal;
-        this.conteudos = new Conteudo[0];
-        this.devsInscritos = new Dev[0];
-    }
+    private LocalDate dataInicio = LocalDate.now();
+    private LocalDate dataFinal = dataInicio.plusDays(45); // Definindo data final como 45 dias após a data de início
+    private Set<Conteudo> conteudos = new LinkedHashSet<>();
+    private Set<Dev> devsInscritos = new HashSet<>();
 
     public String getNome() {
         return nome;
@@ -33,35 +27,40 @@ public class Bootcamp {
         this.descricao = descricao;
     }
 
-    public Date getDataInicio() {
+    public LocalDate getDataInicio() {
         return dataInicio;
     }
 
-    public void setDataInicio(Date dataInicio) {
+    public void setDataInicio(LocalDate dataInicio) {
         this.dataInicio = dataInicio;
     }
 
-    public Date getDataFinal() {
+    public LocalDate getDataFinal() {
         return dataFinal;
     }
 
-    public void setDataFinal(Date dataFinal) {
+    public void setDataFinal(LocalDate dataFinal) {
         this.dataFinal = dataFinal;
     }
 
-    public Conteudo[] getConteudos() {
+    public Set<Conteudo> getConteudos() {
         return conteudos;
     }
 
-    public void setConteudos(Conteudo[] conteudos) {
+    public void setConteudos(Set<Conteudo> conteudos) {
         this.conteudos = conteudos;
     }
-
-    public Dev[] getDevsInscritos() {
+    public Set<Dev> getDevsInscritos() {
         return devsInscritos;
     }
 
-    public void setDevsInscritos(Dev[] devsInscritos) {
+    public void setDevsInscritos(Set<Dev> devsInscritos) {
         this.devsInscritos = devsInscritos;
+    }
+
+    public void addDev(Dev dev) {
+        if (dev != null) {
+            devsInscritos.add(dev);
+        }
     }
 }

@@ -1,14 +1,14 @@
-import java.util.ArrayList;
+import java.util.Set;
+import java.util.LinkedHashSet;
+import java.util.Optional;
 
 public class Dev {
     private String nome;
-    private ArrayList<Conteudo> conteudosInscritos;
-    private ArrayList<Conteudo> conteudosConcluidos;
+    private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
+    private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
 
     public Dev(String nome) {
         this.nome = nome;
-        this.conteudosInscritos = new ArrayList<>();
-        this.conteudosConcluidos = new ArrayList<>();
     }
 
     public String getNome() {
@@ -19,11 +19,7 @@ public class Dev {
         this.nome = nome;
     }
 
-    public ArrayList<Conteudo> getConteudosInscritos() {
-        return conteudosInscritos;
-    }
-
-    public ArrayList<Conteudo> getConteudosConcluidos() {
+    public Set<Conteudo> getConteudosConcluidos() {
         return conteudosConcluidos;
     }
     
@@ -34,7 +30,33 @@ public class Dev {
                     conteudosInscritos.add(conteudo);
                 }
             }
+            
+            if (!bootcamp.getDevsInscritos().contains(this)) {
+                bootcamp.getDevsInscritos().add(this);
+            }
         }
+    }
+
+    public void progredir() {
+        Optional<Conteudo> conteudo = conteudosInscritos.stream().findFirst();
+        if (conteudo.isPresent()) {
+            conteudosConcluidos.add(conteudo.get());
+            conteudosInscritos.remove(conteudo.get());
+        } else {
+            System.out.println("Você não está inscrito em nenhum conteúdo.");
+        }
+    }
+
+    public double calcularTotalXp() {
+        double totalXp = 0;
+        for (Conteudo conteudo : conteudosConcluidos) {
+            totalXp += conteudo.calcularXp();
+        }
+        return totalXp;
+    }
+
+    public Set<Conteudo> getConteudosInscritos() {
+        return conteudosInscritos;
     }
 }
 
